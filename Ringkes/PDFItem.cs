@@ -2,48 +2,57 @@
 
 namespace Ringkes
 {
-    public class PDFItem : INotifyPropertyChanged
+    public class PDFItem :
+        INotifyPropertyChanged
     {
-        private string status;
         private double progress;
 
+        private string status;
+
         public string FilePath { get; set; }
+
+        public string OriginalPath { get; set; }
+
+        public bool IsTemporary { get; set; }
 
         public string FileName
         {
             get
             {
-                return System.IO.Path.GetFileName(FilePath);
-            }
-        }
-
-        public string Status
-        {
-            get => status;
-
-            set
-            {
-                status = value;
-
-                OnPropertyChanged(nameof(Status));
+                return System.IO.Path
+                    .GetFileName(FilePath);
             }
         }
 
         public double Progress
         {
-            get => progress;
+            get { return progress; }
 
             set
             {
                 progress = value;
 
-                OnPropertyChanged(nameof(Progress));
+                OnPropertyChanged("Progress");
             }
         }
 
-        public event PropertyChangedEventHandler PropertyChanged;
+        public string Status
+        {
+            get { return status; }
 
-        protected void OnPropertyChanged(string name)
+            set
+            {
+                status = value;
+
+                OnPropertyChanged("Status");
+            }
+        }
+
+        public event PropertyChangedEventHandler
+            PropertyChanged;
+
+        protected void OnPropertyChanged(
+            string name)
         {
             PropertyChanged?.Invoke(
                 this,

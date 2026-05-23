@@ -43,7 +43,7 @@
                            HorizontalAlignment="Center"/>
 
                 <!-- VERSION -->
-                <TextBlock Text="Version 1.0"
+                <TextBlock Text="Version 1.1.0"
                            FontSize="13"
                            Foreground="Gray"
                            Margin="0,1,0,0"
@@ -57,7 +57,7 @@
                            FontSize="13"
                            Foreground="#404040"/>
 
-                <TextBlock Text="Lightweight PDF compression utility powered by Ghostscript."
+                <TextBlock Text="Lightweight PDF Utility."
                            TextAlignment="Center"
                            TextWrapping="Wrap"
                            Margin="0,2,0,0"
@@ -81,6 +81,9 @@
                                    FontSize="12"/>
 
                         <TextBlock Text="• .NET Framework 4.8.1"
+                                   Margin="0,2,0,0"
+                                   FontSize="12"/>
+                        <TextBlock Text="• PDFSharp 6.2.4"
                                    Margin="0,2,0,0"
                                    FontSize="12"/>
 
