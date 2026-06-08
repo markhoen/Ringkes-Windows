@@ -59,4 +59,10 @@ Proyek ini dilisensikan di bawah **MIT License** - lihat file [LICENSE](LICENSE)
 
 Kontribusi selalu terbuka! Jika Anda menemukan *bug*, ingin menambahkan fitur baru, atau meningkatkan efisiensi kompresi, silakan ajukan *Issue* atau buat *Pull Request*.
 
+---
+
+## 🗂️ Unduh File
+
+File Installer dapat diakses dihalaman [Releases](https://github.com/markhoen/Ringkes-Windows/releases).
+
 *Dibuat dengan bangga, melestarikan budaya lewat teknologi.*
