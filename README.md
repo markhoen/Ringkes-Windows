@@ -63,6 +63,6 @@ Kontribusi selalu terbuka! Jika Anda menemukan *bug*, ingin menambahkan fitur ba
 
 ## 🗂️ Unduh File
 
-File Installer dapat diakses dihalaman [Releases]([https://github.com/markhoen/Ringkes-Windows/releases](https://github.com/markhoen/Ringkes-Windows/releases/tag/v1.0.0)).
+File Installer dapat diakses dihalaman [Releases](https://github.com/markhoen/Ringkes-Windows/releases/tag/v1.0.0).
 
 *Dibuat dengan bangga, melestarikan budaya lewat teknologi.*
