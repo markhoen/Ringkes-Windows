@@ -3,7 +3,27 @@
   "WorkspaceRootPath": "C:\\Users\\asus\\Documents\\GitHub\\Ringkes-Windows\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{2B9B624A-9BB2-43CE-81E0-3AA29985A8BB}|Ringkes\\Ringkes.csproj|c:\\users\\asus\\documents\\github\\ringkes-windows\\ringkes\\aboutwindow.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
+      "AbsoluteMoniker": "D:0:0:{2B9B624A-9BB2-43CE-81E0-3AA29985A8BB}|Ringkes\\Ringkes.csproj|c:\\users\\asus\\documents\\github\\ringkes-windows\\ringkes\\mainwindow.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{2B9B624A-9BB2-43CE-81E0-3AA29985A8BB}|Ringkes\\Ringkes.csproj|solutionrelative:ringkes\\mainwindow.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{2B9B624A-9BB2-43CE-81E0-3AA29985A8BB}|Ringkes\\Ringkes.csproj|C:\\Users\\asus\\Documents\\GitHub\\Ringkes-Windows\\ringkes\\services\\pdfcompressionservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{2B9B624A-9BB2-43CE-81E0-3AA29985A8BB}|Ringkes\\Ringkes.csproj|solutionrelative:ringkes\\services\\pdfcompressionservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{2B9B624A-9BB2-43CE-81E0-3AA29985A8BB}|Ringkes\\Ringkes.csproj|C:\\Users\\asus\\Documents\\GitHub\\Ringkes-Windows\\ringkes\\helpers\\filehelper.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{2B9B624A-9BB2-43CE-81E0-3AA29985A8BB}|Ringkes\\Ringkes.csproj|solutionrelative:ringkes\\helpers\\filehelper.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{2B9B624A-9BB2-43CE-81E0-3AA29985A8BB}|Ringkes\\Ringkes.csproj|C:\\Users\\asus\\Documents\\GitHub\\Ringkes-Windows\\ringkes\\mainwindow.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
+      "RelativeMoniker": "D:0:0:{2B9B624A-9BB2-43CE-81E0-3AA29985A8BB}|Ringkes\\Ringkes.csproj|solutionrelative:ringkes\\mainwindow.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{2B9B624A-9BB2-43CE-81E0-3AA29985A8BB}|Ringkes\\Ringkes.csproj|C:\\Users\\asus\\Documents\\GitHub\\Ringkes-Windows\\ringkes\\services\\imagetopdfservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{2B9B624A-9BB2-43CE-81E0-3AA29985A8BB}|Ringkes\\Ringkes.csproj|solutionrelative:ringkes\\services\\imagetopdfservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{2B9B624A-9BB2-43CE-81E0-3AA29985A8BB}|Ringkes\\Ringkes.csproj|C:\\Users\\asus\\Documents\\GitHub\\Ringkes-Windows\\ringkes\\aboutwindow.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
       "RelativeMoniker": "D:0:0:{2B9B624A-9BB2-43CE-81E0-3AA29985A8BB}|Ringkes\\Ringkes.csproj|solutionrelative:ringkes\\aboutwindow.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
     }
   ],
@@ -19,14 +39,74 @@
             {
               "$type": "Document",
               "DocumentIndex": 0,
+              "Title": "MainWindow.xaml.cs",
+              "DocumentMoniker": "C:\\Users\\asus\\Documents\\GitHub\\Ringkes-Windows\\Ringkes\\MainWindow.xaml.cs",
+              "RelativeDocumentMoniker": "Ringkes\\MainWindow.xaml.cs",
+              "ToolTip": "C:\\Users\\asus\\Documents\\GitHub\\Ringkes-Windows\\Ringkes\\MainWindow.xaml.cs*",
+              "RelativeToolTip": "Ringkes\\MainWindow.xaml.cs*",
+              "ViewState": "AgIAAAwAAAAAAAAAAAAAABMAAAAiAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-06-11T15:48:19.555Z",
+              "IsPinned": true,
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "PdfCompressionService.cs",
+              "DocumentMoniker": "C:\\Users\\asus\\Documents\\GitHub\\Ringkes-Windows\\Ringkes\\Services\\PdfCompressionService.cs",
+              "RelativeDocumentMoniker": "Ringkes\\Services\\PdfCompressionService.cs",
+              "ToolTip": "C:\\Users\\asus\\Documents\\GitHub\\Ringkes-Windows\\Ringkes\\Services\\PdfCompressionService.cs",
+              "RelativeToolTip": "Ringkes\\Services\\PdfCompressionService.cs",
+              "ViewState": "AgIAADsAAAAAAAAAAAAAADsAAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-06-11T16:18:13.351Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "ImageToPdfService.cs",
+              "DocumentMoniker": "C:\\Users\\asus\\Documents\\GitHub\\Ringkes-Windows\\Ringkes\\Services\\ImageToPdfService.cs",
+              "RelativeDocumentMoniker": "Ringkes\\Services\\ImageToPdfService.cs",
+              "ToolTip": "C:\\Users\\asus\\Documents\\GitHub\\Ringkes-Windows\\Ringkes\\Services\\ImageToPdfService.cs",
+              "RelativeToolTip": "Ringkes\\Services\\ImageToPdfService.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAB0AAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-06-11T16:17:25.165Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "FileHelper.cs",
+              "DocumentMoniker": "C:\\Users\\asus\\Documents\\GitHub\\Ringkes-Windows\\Ringkes\\Helpers\\FileHelper.cs",
+              "RelativeDocumentMoniker": "Ringkes\\Helpers\\FileHelper.cs",
+              "ToolTip": "C:\\Users\\asus\\Documents\\GitHub\\Ringkes-Windows\\Ringkes\\Helpers\\FileHelper.cs",
+              "RelativeToolTip": "Ringkes\\Helpers\\FileHelper.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAUAAAAFAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-06-11T16:15:04.393Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "MainWindow.xaml",
+              "DocumentMoniker": "C:\\Users\\asus\\Documents\\GitHub\\Ringkes-Windows\\Ringkes\\MainWindow.xaml",
+              "RelativeDocumentMoniker": "Ringkes\\MainWindow.xaml",
+              "ToolTip": "C:\\Users\\asus\\Documents\\GitHub\\Ringkes-Windows\\Ringkes\\MainWindow.xaml",
+              "RelativeToolTip": "Ringkes\\MainWindow.xaml",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
+              "WhenOpened": "2026-05-25T14:22:47.09Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
               "Title": "AboutWindow.xaml",
               "DocumentMoniker": "C:\\Users\\asus\\Documents\\GitHub\\Ringkes-Windows\\Ringkes\\AboutWindow.xaml",
               "RelativeDocumentMoniker": "Ringkes\\AboutWindow.xaml",
               "ToolTip": "C:\\Users\\asus\\Documents\\GitHub\\Ringkes-Windows\\Ringkes\\AboutWindow.xaml",
               "RelativeToolTip": "Ringkes\\AboutWindow.xaml",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
-              "WhenOpened": "2026-05-23T11:14:34.803Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-05-23T11:14:34.803Z"
             }
           ]
         }

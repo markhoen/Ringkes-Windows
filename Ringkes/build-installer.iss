@@ -27,7 +27,7 @@ UninstallDisplayIcon={app}\Ringkes.exe
 [Files]
 
 ; hapus semua file lama lalu copy baru
-Source: "publish\*"; \
+Source: "bin\Release\**"; \
 DestDir: "{app}"; \
 Flags: ignoreversion recursesubdirs createallsubdirs
 
