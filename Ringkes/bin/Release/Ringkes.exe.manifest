@@ -187,14 +187,14 @@
     </dependentAssembly>
   </dependency>
   <dependency>
-    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="Ringkes.exe" size="5302784">
+    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="Ringkes.exe" size="5305856">
       <assemblyIdentity name="Ringkes" version="1.0.0.0" language="neutral" processorArchitecture="msil" />
       <hash>
         <dsig:Transforms>
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-        <dsig:DigestValue>VM2GqXyB5OcNQ/7EZgy1S+tSi/UqtTCOoibyX1upeoI=</dsig:DigestValue>
+        <dsig:DigestValue>Kx4pFtrAxm/cxGdRyv0wGH4ijHuB5WdIXIWwt2YAy4Q=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>

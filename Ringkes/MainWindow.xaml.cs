@@ -1,12 +1,14 @@
-﻿using System;
+﻿using Ringkes.Helpers;
+using Ringkes.Services;
+using System;
+using System.Collections.Generic;
+using System.Collections.ObjectModel;
 using System.IO;
+using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
-using System.Collections.ObjectModel;
 using System.Windows;
 using System.Windows.Media.Imaging;
-using Ringkes.Helpers;
-using Ringkes.Services;
 
 namespace Ringkes
 {
@@ -15,33 +17,116 @@ namespace Ringkes
         ObservableCollection<PDFItem> pdfs =
         new ObservableCollection<PDFItem>();
 
+        private readonly Queue<PDFItem> queue =
+            new Queue<PDFItem>();
+
+        private bool isProcessing =
+            false;
+
         public MainWindow()
         {
             InitializeComponent();
-            
             FileListView.ItemsSource = pdfs;
-            
             LoadLogo();
+            UpdateFooter();
         }
-        private void About_Click(
-            object sender,
-            RoutedEventArgs e)
+
+        private void UpdateFooter()
         {
-            AboutWindow about =
-                new AboutWindow();
+            int total =
+                pdfs.Count;
+
+            int finished =
+                pdfs.Count(x =>
+                    x.Status.StartsWith("Finished"));
+
+            int waiting =
+                queue.Count;
+
+            FooterText.Text =
+                string.Format(
+                    "{0} file(s) • {1} completed • {2} queued",
+                    total,
+                    finished,
+                    waiting);
+        }
+
+        private string FormatFileSize(
+        long bytes)
+        {
+            string[] sizes =
+            {
+                "B",
+                "KB",
+                "MB",
+                "GB"
+            };
+
+            double len = bytes;
+
+            int order = 0;
+
+            while (len >= 1024
+                && order < sizes.Length - 1)
+            {
+                order++;
+
+                len /= 1024;
+            }
+
+            return string.Format(
+                "{0:0.#} {1}",
+                len,
+                sizes[order]);
+        }
+        private void ClearFinished_Click(
+        object sender,
+        RoutedEventArgs e)
+        {
+            for (int i = pdfs.Count - 1;
+                i >= 0;
+                i--)
+            {
+                if (pdfs[i]
+                    .Status
+                    .StartsWith("Finished"))
+                {
+                    pdfs.RemoveAt(i);
+                }
+            }
+            UpdateFooter();
+        }
+        private async Task ProcessQueue()
+        {
+            isProcessing = true;
+            while (queue.Count > 0)
+            {
+                PDFItem item =
+                    queue.Dequeue();
+                    await CompressPDF(item);
+            }
+            isProcessing = false;
+        }
+        private async Task EnqueueFile(PDFItem item)
+        {
+            queue.Enqueue(item);
+            if (!isProcessing)
+            {
+                await ProcessQueue();
+            }
+        }
+        private void About_Click(object sender, RoutedEventArgs e)
+        {
+            AboutWindow about = new AboutWindow();
             about.Owner = this;
             about.ShowDialog();
         }
-        private void DropArea_DragOver(
-            object sender,
-            DragEventArgs e)
+        private void DropArea_DragOver(object sender, DragEventArgs e)
         {
             if (e.Data.GetDataPresent(DataFormats.FileDrop))
             {
                 e.Effects = DragDropEffects.Copy;
-            }
-            else
-            {
+            }else{
                 e.Effects = DragDropEffects.None;
             }
             e.Handled = true;
@@ -53,13 +138,12 @@ namespace Ringkes
             bitmap.UriSource =
                 new Uri(
                     "Assets/logo.png",
-                    UriKind.Relative);
+                    UriKind.Relative
+                );
             bitmap.EndInit();
             LogoImage.Source = bitmap;
         }
-        private void DropArea_Drop(
-            object sender,
-            DragEventArgs e)
+        private void DropArea_Drop( object sender, DragEventArgs e)
         {
             if (!e.Data.GetDataPresent(
                 DataFormats.FileDrop))
@@ -67,8 +151,7 @@ namespace Ringkes
                 return;
             }
             string[] files =
-                (string[])e.Data.GetData(
-                    DataFormats.FileDrop);
+                (string[])e.Data.GetData( DataFormats.FileDrop);
             foreach (string file in files)
             {
                 if (FileHelper.IsPDFFile(file))
@@ -83,11 +166,11 @@ namespace Ringkes
                             IsTemporary = false
                         };
                     pdfs.Add(item);
-                    _ = CompressPDF(item);
-                }
-                else if (
-                    FileHelper.IsImageFile(file))
-                {
+
+                    UpdateFooter();
+
+                    _ = EnqueueFile(item);
+                }else if (FileHelper.IsImageFile(file)){
                     try
                     {
                         string tempPdf =
@@ -103,7 +186,10 @@ namespace Ringkes
                                 IsTemporary = true
                             };
                         pdfs.Add(item);
-                        _ = CompressPDF(item);
+
+                        UpdateFooter();
+
+                        _ = EnqueueFile(item);
                     }
                     catch (Exception ex)
                     {
@@ -130,6 +216,8 @@ namespace Ringkes
                 Thread.Sleep(200);
                 string inputFile =
                     item.FilePath;
+                long originalSize =
+                    new FileInfo(inputFile).Length;
                 string namingSource =
                     item.OriginalPath
                     ?? inputFile;
@@ -243,23 +331,61 @@ namespace Ringkes
                             {
                             }
                         }
+
+                        long newSize;
+
+                        if (allowOverwrite)
+                        {
+                            newSize =
+                                new FileInfo(inputFile).Length;
+                        }
+                        else
+                        {
+                            newSize =
+                                new FileInfo(outputFile).Length;
+                        }
+
+                        double savedPercent =
+                            (1.0 -
+                            ((double)newSize /
+                            originalSize))
+                            * 100.0;
+
+                        string beforeSize =
+                            FormatFileSize(
+                                originalSize);
+
+                        string afterSize =
+                            FormatFileSize(
+                                newSize);
+
+                        string statusText;
+
+                        if (savedPercent >= 0)
+                        {
+                            statusText =
+                                string.Format(
+                                    "Finished ({0} → {1}, {2:0.#}% smaller)",
+                                    beforeSize,
+                                    afterSize,
+                                    savedPercent);
+                        }
+                        else
+                        {
+                            statusText =
+                                string.Format(
+                                    "Finished ({0} → {1}, {2:0.#}% larger)",
+                                    beforeSize,
+                                    afterSize,
+                                    Math.Abs(savedPercent));
+                        }
+
                         Dispatcher.Invoke(() =>
                         {
-                            item.Progress =
-                                100;
-                            item.Status =
-                                "Finished";
-                        });
-                    }
-                    else
-                    {
-                        Dispatcher.Invoke(() =>
-                        {
-                            item.Progress = 0;
-                            item.Status =
-                                "Ghostscript Failed ("
-                                + exitCode
-                                + ")";
+                            item.Progress = 100;
+                            item.Status = statusText;
+
+                            UpdateFooter();
                         });
                     }
                 }
@@ -270,6 +396,8 @@ namespace Ringkes
                         item.Progress = 0;
                         item.Status =
                             ex.Message;
+
+                        UpdateFooter();
                     });
                 }
             });

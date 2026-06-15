@@ -6,7 +6,7 @@
         xmlns:local="clr-namespace:Ringkes"
         mc:Ignorable="d"
         Title="Ringkes"
-        Height="500"
+        Height="700"
         Width="500"
         MinHeight="500"
         MinWidth="500"
@@ -21,6 +21,7 @@
             <RowDefinition Height="Auto"/>
             <RowDefinition Height="130"/>
             <RowDefinition Height="*"/>
+            <RowDefinition Height="Auto"/>
         </Grid.RowDefinitions>
 
         <!-- TOP MENU -->
@@ -144,16 +145,18 @@
                            FontSize="11"
                            Foreground="#606060"
                            VerticalAlignment="Center"/>
+
+                        <TextBlock Text=" gswin64c.exe"
+                           DockPanel.Dock="Right"
+                           FontSize="10"
+                           Foreground="#909090"
+                           VerticalAlignment="Center"/>
                     </StackPanel>
 
                 </StackPanel>
 
                 <!-- PATH -->
-                <TextBlock Text=" gswin64c.exe"
-                   DockPanel.Dock="Right"
-                   FontSize="10"
-                   Foreground="#909090"
-                   VerticalAlignment="Center"/>
+                
 
             </DockPanel>
 
@@ -261,6 +264,30 @@
             </ListView.ItemTemplate>
 
         </ListView>
+
+        <Border Grid.Row="5"
+            Background="White"
+            CornerRadius="12"
+            Padding="10"
+            Margin="0,8,0,0">
+
+            <DockPanel LastChildFill="False">
+
+                <TextBlock x:Name="FooterText"
+                   FontSize="11"
+                   Foreground="#707070"
+                   VerticalAlignment="Center"/>
+
+                <Button Content="Clear Finished"
+                    Width="110"
+                    Height="28"
+                    Margin="10,0,0,0"
+                    DockPanel.Dock="Right"
+                    Click="ClearFinished_Click"/>
+
+            </DockPanel>
+
+        </Border>
 
     </Grid>
 
