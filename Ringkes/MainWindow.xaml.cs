@@ -1,4 +1,5 @@
 ﻿using Ringkes.Helpers;
+using Ringkes.Models;
 using Ringkes.Services;
 using System;
 using System.Collections.Generic;
@@ -8,6 +9,7 @@ using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
 using System.Windows;
+using System.Windows.Media;
 using System.Windows.Media.Imaging;
 
 namespace Ringkes
@@ -23,12 +25,130 @@ namespace Ringkes
         private bool isProcessing =
             false;
 
+        private RingkesMode currentMode = 
+            RingkesMode.Compress;
+
         public MainWindow()
         {
             InitializeComponent();
+            UpdateModeUI();
             FileListView.ItemsSource = pdfs;
             LoadLogo();
             UpdateFooter();
+        }
+
+        private void CompressModeButton_Click(
+            object sender,
+            RoutedEventArgs e)
+        {
+            currentMode =
+                RingkesMode.Compress;
+
+            UpdateModeUI();
+        }
+
+        private void MergeModeButton_Click(
+            object sender,
+            RoutedEventArgs e)
+        {
+            currentMode =
+                RingkesMode.Merge;
+
+            UpdateModeUI();
+        }
+
+        private void UpdateModeUI()
+        {
+            if (currentMode == RingkesMode.Compress)
+            {
+                CompressModeButton.Background =
+                    Brushes.DodgerBlue;
+
+                CompressModeButton.Foreground =
+                    Brushes.White;
+
+                MergeModeButton.Background =
+                    Brushes.White;
+
+                MergeModeButton.Foreground =
+                    Brushes.Black;
+
+                DropIconText.Text = "📄";
+
+                DropTitleText.Text =
+                    "Drop PDF Files";
+
+                DropSubtitleText.Text =
+                    "MERGE PDF DOCUMENTS";
+
+                FooterText.Text =
+                    "Ready";
+
+                ClearFinishedButton.Visibility =
+                    Visibility.Visible;
+
+                ManageFilesButton.Visibility =
+                    Visibility.Collapsed;
+
+                MergeButton.Visibility =
+                    Visibility.Collapsed;
+            }
+            else
+            {
+                MergeModeButton.Background =
+                    Brushes.DodgerBlue;
+
+                MergeModeButton.Foreground =
+                    Brushes.White;
+
+                CompressModeButton.Background =
+                    Brushes.White;
+
+                CompressModeButton.Foreground =
+                    Brushes.Black;
+
+                DropIconText.Text = "📚";
+
+                DropTitleText.Text =
+                    "Drop PDFs to Merge";
+
+                DropSubtitleText.Text =
+                    "COMBINE MULTIPLE PDF FILES";
+
+                FooterText.Text =
+                    "No PDF files selected";
+
+                ClearFinishedButton.Visibility =
+                Visibility.Collapsed;
+
+                ManageFilesButton.Visibility =
+                    Visibility.Visible;
+
+                MergeButton.Visibility =
+                    Visibility.Visible;
+
+                ManageFilesButton.IsEnabled =
+                    false;
+
+                MergeButton.IsEnabled =
+                    false;
+            }
+        }
+
+        private void ManageFilesButton_Click(
+            object sender,
+            RoutedEventArgs e)
+        {
+            MessageBox.Show(
+                "Manage Files is under development.");
+        }
+
+        private void MergeButton_Click(
+            object sender,
+            RoutedEventArgs e)
+        {
+            MessageBox.Show(
+                "Merge PDF is under development.");
         }
 
         private void UpdateFooter()

@@ -19,6 +19,7 @@
             <RowDefinition Height="40"/>
             <RowDefinition Height="110"/>
             <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
             <RowDefinition Height="130"/>
             <RowDefinition Height="*"/>
             <RowDefinition Height="Auto"/>
@@ -109,10 +110,10 @@
 
         <!-- STATUS BAR -->
         <Border Grid.Row="2"
-        Background="White"
-        CornerRadius="12"
-        Padding="12"
-        Margin="0,0,0,14">
+            Background="White"
+            CornerRadius="12"
+            Padding="12"
+            Margin="0,0,0,14">
 
             <DockPanel>
 
@@ -162,8 +163,39 @@
 
         </Border>
 
-        <!-- DROP AREA -->
+        <!-- MODE SELECTOR -->
         <Border Grid.Row="3"
+            Background="White"
+            CornerRadius="12"
+            Padding="6"
+            Margin="0,0,0,14">
+
+            <Grid>
+
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="*"/>
+                </Grid.ColumnDefinitions>
+
+                <Button x:Name="CompressModeButton"
+                    Grid.Column="0"
+                    Content="Compress"
+                    Height="32"
+                    Click="CompressModeButton_Click"/>
+
+                <Button x:Name="MergeModeButton"
+                    Grid.Column="1"
+                    Content="Merge"
+                    Height="32"
+                    Margin="6,0,0,0"
+                    Click="MergeModeButton_Click"/>
+
+            </Grid>
+
+        </Border>
+
+        <!-- DROP AREA -->
+        <Border Grid.Row="4"
                 Panel.ZIndex="1"
                 Margin="0,0,0,14"
                 CornerRadius="18"
@@ -180,21 +212,24 @@
                 <StackPanel VerticalAlignment="Center"
                             HorizontalAlignment="Center">
 
-                    <TextBlock Text="📄"
-                           FontSize="42"
-                           HorizontalAlignment="Center"/>
+                    <TextBlock x:Name="DropIconText"
+                       Text="📄"
+                       FontSize="42"
+                       HorizontalAlignment="Center"/>
 
-                    <TextBlock Text="Drag &amp; Drop PDF or Images"
-                           FontSize="17"
-                           FontWeight="SemiBold"
-                           Margin="0,8,0,0"
-                           HorizontalAlignment="Center"/>
+                    <TextBlock x:Name="DropTitleText"
+                       Text="Drag &amp; Drop PDF or Images"
+                       FontSize="17"
+                       FontWeight="SemiBold"
+                       Margin="0,8,0,0"
+                       HorizontalAlignment="Center"/>
 
-                    <TextBlock Text="PDF COMPRESS • IMAGE TO PDF"
-                           FontSize="11"
-                           Foreground="#808080"
-                           Margin="0,4,0,0"
-                           HorizontalAlignment="Center"/>
+                    <TextBlock x:Name="DropSubtitleText"
+                       Text="PDF COMPRESS • IMAGE TO PDF"
+                       FontSize="11"
+                       Foreground="#808080"
+                       Margin="0,4,0,0"
+                       HorizontalAlignment="Center"/>
 
                 </StackPanel>
 
@@ -204,7 +239,7 @@
 
         <!-- FILE LIST -->
         <ListView x:Name="FileListView"
-              Grid.Row="4"
+              Grid.Row="5"
               Panel.ZIndex="0"
               BorderThickness="0"
               Background="Transparent"
@@ -265,11 +300,12 @@
 
         </ListView>
 
-        <Border Grid.Row="5"
-            Background="White"
-            CornerRadius="12"
-            Padding="10"
-            Margin="0,8,0,0">
+        <!-- FOOTER/ACTION -->
+        <Border Grid.Row="6"
+        Background="White"
+        CornerRadius="12"
+        Padding="10"
+        Margin="0,8,0,0">
 
             <DockPanel LastChildFill="False">
 
@@ -278,12 +314,33 @@
                    Foreground="#707070"
                    VerticalAlignment="Center"/>
 
-                <Button Content="Clear Finished"
+                <StackPanel Orientation="Horizontal"
+                    DockPanel.Dock="Right">
+
+                    <Button x:Name="ManageFilesButton"
+                    Content="Manage Files"
                     Width="110"
                     Height="28"
-                    Margin="10,0,0,0"
-                    DockPanel.Dock="Right"
+                    Margin="0,0,8,0"
+                    Visibility="Collapsed"
+                    IsEnabled="False"
+                    Click="ManageFilesButton_Click"/>
+
+                    <Button x:Name="MergeButton"
+                    Content="Merge"
+                    Width="90"
+                    Height="28"
+                    Visibility="Collapsed"
+                    IsEnabled="False"
+                    Click="MergeButton_Click"/>
+
+                    <Button x:Name="ClearFinishedButton"
+                    Content="Clear Finished"
+                    Width="110"
+                    Height="28"
                     Click="ClearFinished_Click"/>
+
+                </StackPanel>
 
             </DockPanel>
 
