@@ -1,9 +1,12 @@
-﻿using Ringkes.Helpers;
+﻿using Microsoft.Win32;
+using Ringkes.Helpers;
 using Ringkes.Models;
 using Ringkes.Services;
+using Ringkes.Views;
 using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
+using System.Diagnostics;
 using System.IO;
 using System.Linq;
 using System.Threading;
@@ -17,10 +20,13 @@ namespace Ringkes
     public partial class MainWindow : Window
     {
         ObservableCollection<PDFItem> pdfs =
-        new ObservableCollection<PDFItem>();
+            new ObservableCollection<PDFItem>();
 
         private readonly Queue<PDFItem> queue =
             new Queue<PDFItem>();
+
+        private readonly ObservableCollection<MergeHistoryItem> mergeHistory =
+            new ObservableCollection<MergeHistoryItem>();
 
         private bool isProcessing =
             false;
@@ -28,21 +34,35 @@ namespace Ringkes
         private RingkesMode currentMode = 
             RingkesMode.Compress;
 
+        private readonly ObservableCollection<PDFItem>
+            mergeItems =
+                new ObservableCollection<PDFItem>();
+
+        public bool HasMergeFiles =>
+            mergeItems.Count > 0;
+
+        public bool CanMerge =>
+            mergeItems.Count > 1;
+
         public MainWindow()
         {
             InitializeComponent();
             UpdateModeUI();
-            FileListView.ItemsSource = pdfs;
             LoadLogo();
             UpdateFooter();
+            FileListView.ItemsSource = pdfs;
+            MergeHistoryListView.ItemsSource = mergeHistory;
         }
 
         private void CompressModeButton_Click(
             object sender,
             RoutedEventArgs e)
         {
-            currentMode =
-                RingkesMode.Compress;
+            currentMode = RingkesMode.Compress;
+
+            FileListView.Visibility = Visibility.Visible;
+
+            MergeHistoryListView.Visibility = Visibility.Collapsed;
 
             UpdateModeUI();
         }
@@ -51,10 +71,75 @@ namespace Ringkes
             object sender,
             RoutedEventArgs e)
         {
-            currentMode =
-                RingkesMode.Merge;
+            currentMode = RingkesMode.Merge;
+
+            FileListView.Visibility = Visibility.Collapsed;
+
+            MergeHistoryListView.Visibility = Visibility.Visible;
 
             UpdateModeUI();
+        }
+
+        private void OpenMergedFile_Click(
+            object sender,
+            RoutedEventArgs e)
+        {
+            if (!(sender is FrameworkElement element))
+            {
+                return;
+            }
+
+            if (!(element.Tag is string path))
+            {
+                return;
+            }
+
+            if (!File.Exists(path))
+            {
+                MessageBox.Show(
+                    "File not found.",
+                    "Ringkes",
+                    MessageBoxButton.OK,
+                    MessageBoxImage.Warning);
+
+                return;
+            }
+
+            Process.Start(
+                new ProcessStartInfo(path)
+                {
+                    UseShellExecute = true
+                });
+        }
+
+        private void OpenMergedFolder_Click(
+            object sender,
+            RoutedEventArgs e)
+        {
+            if (!(sender is FrameworkElement element))
+            {
+                return;
+            }
+
+            if (!(element.Tag is string path))
+            {
+                return;
+            }
+
+            if (!File.Exists(path))
+            {
+                MessageBox.Show(
+                    "File not found.",
+                    "Ringkes",
+                    MessageBoxButton.OK,
+                    MessageBoxImage.Warning);
+
+                return;
+            }
+
+            Process.Start(
+                "explorer.exe",
+                $"/select,\"{path}\"");
         }
 
         private void UpdateModeUI()
@@ -76,13 +161,16 @@ namespace Ringkes
                 DropIconText.Text = "📄";
 
                 DropTitleText.Text =
-                    "Drop PDF Files";
+                    "Drop PDF or Images";
 
                 DropSubtitleText.Text =
-                    "MERGE PDF DOCUMENTS";
+                    "COMPRESS PDF FILES";
 
                 FooterText.Text =
                     "Ready";
+
+                FileListView.Visibility =
+                    Visibility.Visible;
 
                 ClearFinishedButton.Visibility =
                     Visibility.Visible;
@@ -115,11 +203,11 @@ namespace Ringkes
                 DropSubtitleText.Text =
                     "COMBINE MULTIPLE PDF FILES";
 
-                FooterText.Text =
-                    "No PDF files selected";
+                FileListView.Visibility =
+                    Visibility.Collapsed;
 
                 ClearFinishedButton.Visibility =
-                Visibility.Collapsed;
+                    Visibility.Collapsed;
 
                 ManageFilesButton.Visibility =
                     Visibility.Visible;
@@ -127,11 +215,7 @@ namespace Ringkes
                 MergeButton.Visibility =
                     Visibility.Visible;
 
-                ManageFilesButton.IsEnabled =
-                    false;
-
-                MergeButton.IsEnabled =
-                    false;
+                RefreshMergeUI();
             }
         }
 
@@ -139,20 +223,135 @@ namespace Ringkes
             object sender,
             RoutedEventArgs e)
         {
-            MessageBox.Show(
-                "Manage Files is under development.");
+            MergeManagerWindow wnd =
+                new MergeManagerWindow(
+                    mergeItems);
+
+            wnd.Owner = this;
+
+            wnd.ShowDialog();
+
+            RefreshMergeUI();
         }
 
-        private void MergeButton_Click(
+        private async void MergeButton_Click(
             object sender,
             RoutedEventArgs e)
         {
-            MessageBox.Show(
-                "Merge PDF is under development.");
+            if (mergeItems.Count < 2)
+            {
+                return;
+            }
+
+            SaveFileDialog dialog =
+                new SaveFileDialog
+                {
+                    Filter =
+                        "PDF Files (*.pdf)|*.pdf",
+                    DefaultExt = "pdf",
+                    AddExtension = true,
+                    FileName = ""
+                };
+
+            if (dialog.ShowDialog() != true)
+            {
+                return;
+            }
+
+            string selectedPath = dialog.FileName;
+
+            string directory =
+                Path.GetDirectoryName(selectedPath) ?? "";
+
+            string filename =
+                Path.GetFileNameWithoutExtension(selectedPath);
+
+            if (string.IsNullOrWhiteSpace(filename))
+            {
+                MessageBox.Show(
+                    "Please enter a file name.",
+                    "Missing File Name",
+                    MessageBoxButton.OK,
+                    MessageBoxImage.Warning);
+
+                return;
+            }
+
+            string finalOutputPath =
+                Path.Combine(
+                    directory,
+                    $"{filename}_merged_by_Ringkes_{DateTime.Now:yyyyMMdd}.pdf");
+
+            MergeProgressWindow progress = null;
+
+            try
+            {
+                progress =
+                    new MergeProgressWindow(
+                        finalOutputPath);
+
+                progress.Owner = this;
+
+                progress.Show();
+
+                await Task.Run(() =>
+                {
+                    PdfMergeService.Merge(
+                        mergeItems.Select(
+                            x => x.FilePath),
+                        finalOutputPath);
+                });
+
+                mergeHistory.Insert(
+                    0,new MergeHistoryItem
+                {
+                    FileName =
+                        Path.GetFileName(
+                            finalOutputPath),
+
+                    OutputPath =
+                        finalOutputPath,
+
+                    SourceCount =
+                        mergeItems.Count,
+
+                    CreatedAt =
+                        DateTime.Now
+                });
+
+                FooterText.Text =
+                    $"{mergeHistory.Count} merge history item(s)";
+
+                MessageBox.Show(
+                    $"PDF files merged successfully.\n\n{Path.GetFileName(finalOutputPath)}",
+                    "Merge Complete",
+                    MessageBoxButton.OK,
+                    MessageBoxImage.Information);
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(
+                    ex.Message,
+                    "Merge Failed",
+                    MessageBoxButton.OK,
+                    MessageBoxImage.Error);
+            }
+            finally
+            {
+                if (progress != null)
+                    progress.Close();
+            }
         }
 
         private void UpdateFooter()
         {
+            if (currentMode ==
+                RingkesMode.Merge)
+            {
+                RefreshMergeUI();
+                return;
+            }
+
             int total =
                 pdfs.Count;
 
@@ -263,15 +462,10 @@ namespace Ringkes
             bitmap.EndInit();
             LogoImage.Source = bitmap;
         }
-        private void DropArea_Drop( object sender, DragEventArgs e)
+
+        private void HandleCompressDrop(
+            string[] files)
         {
-            if (!e.Data.GetDataPresent(
-                DataFormats.FileDrop))
-            {
-                return;
-            }
-            string[] files =
-                (string[])e.Data.GetData( DataFormats.FileDrop);
             foreach (string file in files)
             {
                 if (FileHelper.IsPDFFile(file))
@@ -290,7 +484,9 @@ namespace Ringkes
                     UpdateFooter();
 
                     _ = EnqueueFile(item);
-                }else if (FileHelper.IsImageFile(file)){
+                }
+                else if (FileHelper.IsImageFile(file))
+                {
                     try
                     {
                         string tempPdf =
@@ -319,6 +515,90 @@ namespace Ringkes
                 }
             }
         }
+
+        private void HandleMergeDrop(
+            string[] files)
+        {
+            foreach (string file in files)
+            {
+                if (!FileHelper.IsPDFFile(file))
+                {
+                    continue;
+                }
+
+                if (mergeItems.Any(
+                    x => x.FilePath == file))
+                {
+                    continue;
+                }
+
+                mergeItems.Add(
+                    new PDFItem
+                    {
+                        FilePath = file,
+                        Status = "Ready"
+                    });
+            }
+
+            RefreshMergeUI();
+        }
+
+        private void RefreshMergeUI()
+        {
+            if (currentMode !=
+                RingkesMode.Merge)
+            {
+                return;
+            }
+
+            if (mergeItems.Count == 0)
+            {
+                FooterText.Text =
+                    "No PDF files selected";
+            }
+            else
+            {
+                FooterText.Text =
+                    $"{mergeItems.Count} PDF file(s) selected";
+            }
+
+            ManageFilesButton.IsEnabled =
+                mergeItems.Count > 0;
+
+            MergeButton.IsEnabled =
+                mergeItems.Count > 1;
+
+            DropTitleText.Text =
+                mergeItems.Count == 0
+                ? "Drop PDFs to Merge"
+                : $"{mergeItems.Count} file(s) in merge queue";
+        }
+
+        private void DropArea_Drop(
+            object sender,
+            DragEventArgs e)
+        {
+            if (!e.Data.GetDataPresent(
+                DataFormats.FileDrop))
+            {
+                return;
+            }
+
+            string[] files =
+                (string[])e.Data.GetData(
+                    DataFormats.FileDrop);
+
+            if (currentMode ==
+                RingkesMode.Compress)
+            {
+                HandleCompressDrop(files);
+            }
+            else
+            {
+                HandleMergeDrop(files);
+            }
+        }
+
         private async Task CompressPDF(
             PDFItem item)
         {

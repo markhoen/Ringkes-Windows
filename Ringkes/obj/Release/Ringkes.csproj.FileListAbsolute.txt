@@ -1152,7 +1152,6 @@ C:\Users\Mardiansyah\Documents\GitHub\Ringkes-Windows\Ringkes\bin\Release\System
 C:\Users\Mardiansyah\Documents\GitHub\Ringkes-Windows\Ringkes\bin\Release\System.Security.Cryptography.Pkcs.xml
 C:\Users\Mardiansyah\Documents\GitHub\Ringkes-Windows\Ringkes\bin\Release\System.Threading.Tasks.Extensions.xml
 C:\Users\Mardiansyah\Documents\GitHub\Ringkes-Windows\Ringkes\obj\Release\Ringkes.csproj.AssemblyReference.cache
-C:\Users\Mardiansyah\Documents\GitHub\Ringkes-Windows\Ringkes\obj\Release\Ringkes.exe.config
 C:\Users\Mardiansyah\Documents\GitHub\Ringkes-Windows\Ringkes\obj\Release\AboutWindow.baml
 C:\Users\Mardiansyah\Documents\GitHub\Ringkes-Windows\Ringkes\obj\Release\AboutWindow.g.cs
 C:\Users\Mardiansyah\Documents\GitHub\Ringkes-Windows\Ringkes\obj\Release\MainWindow.g.cs
@@ -1170,3 +1169,8 @@ C:\Users\Mardiansyah\Documents\GitHub\Ringkes-Windows\Ringkes\obj\Release\Ringke
 C:\Users\Mardiansyah\Documents\GitHub\Ringkes-Windows\Ringkes\obj\Release\Ringkes.csproj.Up2Date
 C:\Users\Mardiansyah\Documents\GitHub\Ringkes-Windows\Ringkes\obj\Release\Ringkes.exe
 C:\Users\Mardiansyah\Documents\GitHub\Ringkes-Windows\Ringkes\obj\Release\Ringkes.pdb
+C:\Users\Mardiansyah\Documents\GitHub\Ringkes-Windows\Ringkes\obj\Release\Windows\MergeManagerWindow.baml
+C:\Users\Mardiansyah\Documents\GitHub\Ringkes-Windows\Ringkes\obj\Release\Windows\MergeProgressWindow.baml
+C:\Users\Mardiansyah\Documents\GitHub\Ringkes-Windows\Ringkes\obj\Release\Windows\MergeManagerWindow.g.cs
+C:\Users\Mardiansyah\Documents\GitHub\Ringkes-Windows\Ringkes\obj\Release\Windows\MergeProgressWindow.g.cs
+C:\Users\Mardiansyah\Documents\GitHub\Ringkes-Windows\Ringkes\obj\Release\Ringkes.exe.config

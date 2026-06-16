@@ -7,31 +7,32 @@
       "RelativeMoniker": "D:0:0:{2B9B624A-9BB2-43CE-81E0-3AA29985A8BB}|Ringkes\\Ringkes.csproj|solutionrelative:ringkes\\mainwindow.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{2B9B624A-9BB2-43CE-81E0-3AA29985A8BB}|Ringkes\\Ringkes.csproj|c:\\users\\mardiansyah\\documents\\github\\ringkes-windows\\ringkes\\mainwindow.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
-      "RelativeMoniker": "D:0:0:{2B9B624A-9BB2-43CE-81E0-3AA29985A8BB}|Ringkes\\Ringkes.csproj|solutionrelative:ringkes\\mainwindow.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
+      "AbsoluteMoniker": "D:0:0:{2B9B624A-9BB2-43CE-81E0-3AA29985A8BB}|Ringkes\\Ringkes.csproj|c:\\users\\mardiansyah\\documents\\github\\ringkes-windows\\ringkes\\windows\\mergeprogresswindow.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
+      "RelativeMoniker": "D:0:0:{2B9B624A-9BB2-43CE-81E0-3AA29985A8BB}|Ringkes\\Ringkes.csproj|solutionrelative:ringkes\\windows\\mergeprogresswindow.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{2B9B624A-9BB2-43CE-81E0-3AA29985A8BB}|Ringkes\\Ringkes.csproj|c:\\users\\mardiansyah\\documents\\github\\ringkes-windows\\ringkes\\models\\mergehistoryitem.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{2B9B624A-9BB2-43CE-81E0-3AA29985A8BB}|Ringkes\\Ringkes.csproj|solutionrelative:ringkes\\models\\mergehistoryitem.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{2B9B624A-9BB2-43CE-81E0-3AA29985A8BB}|Ringkes\\Ringkes.csproj|c:\\users\\mardiansyah\\documents\\github\\ringkes-windows\\ringkes\\windows\\mergeprogresswindow.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{2B9B624A-9BB2-43CE-81E0-3AA29985A8BB}|Ringkes\\Ringkes.csproj|solutionrelative:ringkes\\windows\\mergeprogresswindow.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{2B9B624A-9BB2-43CE-81E0-3AA29985A8BB}|Ringkes\\Ringkes.csproj|c:\\users\\mardiansyah\\documents\\github\\ringkes-windows\\ringkes\\windows\\mergemanagerwindow.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{2B9B624A-9BB2-43CE-81E0-3AA29985A8BB}|Ringkes\\Ringkes.csproj|solutionrelative:ringkes\\windows\\mergemanagerwindow.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{2B9B624A-9BB2-43CE-81E0-3AA29985A8BB}|Ringkes\\Ringkes.csproj|c:\\users\\mardiansyah\\documents\\github\\ringkes-windows\\ringkes\\windows\\mergemanagerwindow.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
+      "RelativeMoniker": "D:0:0:{2B9B624A-9BB2-43CE-81E0-3AA29985A8BB}|Ringkes\\Ringkes.csproj|solutionrelative:ringkes\\windows\\mergemanagerwindow.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{2B9B624A-9BB2-43CE-81E0-3AA29985A8BB}|Ringkes\\Ringkes.csproj|c:\\users\\mardiansyah\\documents\\github\\ringkes-windows\\ringkes\\services\\pdfmergeservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{2B9B624A-9BB2-43CE-81E0-3AA29985A8BB}|Ringkes\\Ringkes.csproj|solutionrelative:ringkes\\services\\pdfmergeservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\Mardiansyah\\AppData\\Local\\Temp\\.vsdbgsrc\\cc40e6c9113e8e409e66507b58c06c87fa4d9cf9f4e297b5ae16de018dfbe2c9\\WpfXamlLoader.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{2B9B624A-9BB2-43CE-81E0-3AA29985A8BB}|Ringkes\\Ringkes.csproj|C:\\Users\\Mardiansyah\\Documents\\GitHub\\Ringkes-Windows\\ringkes\\aboutwindow.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
-      "RelativeMoniker": "D:0:0:{2B9B624A-9BB2-43CE-81E0-3AA29985A8BB}|Ringkes\\Ringkes.csproj|solutionrelative:ringkes\\aboutwindow.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{2B9B624A-9BB2-43CE-81E0-3AA29985A8BB}|Ringkes\\Ringkes.csproj|C:\\Users\\Mardiansyah\\Documents\\GitHub\\Ringkes-Windows\\ringkes\\services\\imagetopdfservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{2B9B624A-9BB2-43CE-81E0-3AA29985A8BB}|Ringkes\\Ringkes.csproj|solutionrelative:ringkes\\services\\imagetopdfservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{2B9B624A-9BB2-43CE-81E0-3AA29985A8BB}|Ringkes\\Ringkes.csproj|C:\\Users\\Mardiansyah\\Documents\\GitHub\\Ringkes-Windows\\ringkes\\services\\pdfcompressionservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{2B9B624A-9BB2-43CE-81E0-3AA29985A8BB}|Ringkes\\Ringkes.csproj|solutionrelative:ringkes\\services\\pdfcompressionservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{2B9B624A-9BB2-43CE-81E0-3AA29985A8BB}|Ringkes\\Ringkes.csproj|C:\\Users\\Mardiansyah\\Documents\\GitHub\\Ringkes-Windows\\ringkes\\helpers\\filehelper.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{2B9B624A-9BB2-43CE-81E0-3AA29985A8BB}|Ringkes\\Ringkes.csproj|solutionrelative:ringkes\\helpers\\filehelper.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{2B9B624A-9BB2-43CE-81E0-3AA29985A8BB}|Ringkes\\Ringkes.csproj|c:\\users\\mardiansyah\\documents\\github\\ringkes-windows\\ringkes\\models\\pdfitem.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{2B9B624A-9BB2-43CE-81E0-3AA29985A8BB}|Ringkes\\Ringkes.csproj|solutionrelative:ringkes\\models\\pdfitem.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -49,9 +50,9 @@
               "Title": "MainWindow.xaml.cs",
               "DocumentMoniker": "C:\\Users\\Mardiansyah\\Documents\\GitHub\\Ringkes-Windows\\Ringkes\\MainWindow.xaml.cs",
               "RelativeDocumentMoniker": "Ringkes\\MainWindow.xaml.cs",
-              "ToolTip": "C:\\Users\\Mardiansyah\\Documents\\GitHub\\Ringkes-Windows\\Ringkes\\MainWindow.xaml.cs*",
-              "RelativeToolTip": "Ringkes\\MainWindow.xaml.cs*",
-              "ViewState": "AgIAAAcAAAAAAAAAAAAnwCUAAAAJAAAAAAAAAA==",
+              "ToolTip": "C:\\Users\\Mardiansyah\\Documents\\GitHub\\Ringkes-Windows\\Ringkes\\MainWindow.xaml.cs",
+              "RelativeToolTip": "Ringkes\\MainWindow.xaml.cs",
+              "ViewState": "AgIAAEwBAAAAAAAAAAAAwFcBAAAJAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2026-06-11T15:48:19.555Z",
               "IsPinned": true,
@@ -59,108 +60,91 @@
             },
             {
               "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "MergeProgressWindow.xaml",
+              "DocumentMoniker": "C:\\Users\\Mardiansyah\\Documents\\GitHub\\Ringkes-Windows\\Ringkes\\Windows\\MergeProgressWindow.xaml",
+              "RelativeDocumentMoniker": "Ringkes\\Windows\\MergeProgressWindow.xaml",
+              "ToolTip": "C:\\Users\\Mardiansyah\\Documents\\GitHub\\Ringkes-Windows\\Ringkes\\Windows\\MergeProgressWindow.xaml",
+              "RelativeToolTip": "Ringkes\\Windows\\MergeProgressWindow.xaml",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
+              "WhenOpened": "2026-06-16T16:31:32.305Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
               "DocumentIndex": 2,
-              "Title": "PdfMergeService.cs",
-              "DocumentMoniker": "C:\\Users\\Mardiansyah\\Documents\\GitHub\\Ringkes-Windows\\Ringkes\\Services\\PdfMergeService.cs",
-              "RelativeDocumentMoniker": "Ringkes\\Services\\PdfMergeService.cs",
-              "ToolTip": "C:\\Users\\Mardiansyah\\Documents\\GitHub\\Ringkes-Windows\\Ringkes\\Services\\PdfMergeService.cs",
-              "RelativeToolTip": "Ringkes\\Services\\PdfMergeService.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAgAAAARAAAAAAAAAA==",
+              "Title": "MergeHistoryItem.cs",
+              "DocumentMoniker": "C:\\Users\\Mardiansyah\\Documents\\GitHub\\Ringkes-Windows\\Ringkes\\Models\\MergeHistoryItem.cs",
+              "RelativeDocumentMoniker": "Ringkes\\Models\\MergeHistoryItem.cs",
+              "ToolTip": "C:\\Users\\Mardiansyah\\Documents\\GitHub\\Ringkes-Windows\\Ringkes\\Models\\MergeHistoryItem.cs",
+              "RelativeToolTip": "Ringkes\\Models\\MergeHistoryItem.cs",
+              "ViewState": "AgIAAAgAAAAAAAAAAAAIwCIAAAANAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-06-16T07:58:14.703Z",
+              "WhenOpened": "2026-06-16T16:54:09.514Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 3,
-              "Title": "WpfXamlLoader.cs",
-              "DocumentMoniker": "C:\\Users\\Mardiansyah\\AppData\\Local\\Temp\\.vsdbgsrc\\cc40e6c9113e8e409e66507b58c06c87fa4d9cf9f4e297b5ae16de018dfbe2c9\\WpfXamlLoader.cs",
-              "RelativeDocumentMoniker": "..\\..\\..\\AppData\\Local\\Temp\\.vsdbgsrc\\cc40e6c9113e8e409e66507b58c06c87fa4d9cf9f4e297b5ae16de018dfbe2c9\\WpfXamlLoader.cs",
-              "ToolTip": "C:\\Users\\Mardiansyah\\AppData\\Local\\Temp\\.vsdbgsrc\\cc40e6c9113e8e409e66507b58c06c87fa4d9cf9f4e297b5ae16de018dfbe2c9\\WpfXamlLoader.cs [Read Only]",
-              "RelativeToolTip": "..\\..\\..\\AppData\\Local\\Temp\\.vsdbgsrc\\cc40e6c9113e8e409e66507b58c06c87fa4d9cf9f4e297b5ae16de018dfbe2c9\\WpfXamlLoader.cs [Read Only]",
-              "ViewState": "AgIAAF4AAAAAAAAAAAAvwHcAAAAWAAAAAQAAAA==",
+              "Title": "MergeProgressWindow.xaml.cs",
+              "DocumentMoniker": "C:\\Users\\Mardiansyah\\Documents\\GitHub\\Ringkes-Windows\\Ringkes\\Windows\\MergeProgressWindow.xaml.cs",
+              "RelativeDocumentMoniker": "Ringkes\\Windows\\MergeProgressWindow.xaml.cs",
+              "ToolTip": "C:\\Users\\Mardiansyah\\Documents\\GitHub\\Ringkes-Windows\\Ringkes\\Windows\\MergeProgressWindow.xaml.cs",
+              "RelativeToolTip": "Ringkes\\Windows\\MergeProgressWindow.xaml.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABAAAAABAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-06-15T23:12:58.986Z",
-              "EditorCaption": " [Read Only]"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 5,
-              "Title": "ImageToPdfService.cs",
-              "DocumentMoniker": "C:\\Users\\Mardiansyah\\Documents\\GitHub\\Ringkes-Windows\\Ringkes\\Services\\ImageToPdfService.cs",
-              "RelativeDocumentMoniker": "Ringkes\\Services\\ImageToPdfService.cs",
-              "ToolTip": "C:\\Users\\Mardiansyah\\Documents\\GitHub\\Ringkes-Windows\\Ringkes\\Services\\ImageToPdfService.cs",
-              "RelativeToolTip": "Ringkes\\Services\\ImageToPdfService.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAB0AAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-06-11T16:17:25.165Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 6,
-              "Title": "PdfCompressionService.cs",
-              "DocumentMoniker": "C:\\Users\\Mardiansyah\\Documents\\GitHub\\Ringkes-Windows\\Ringkes\\Services\\PdfCompressionService.cs",
-              "RelativeDocumentMoniker": "Ringkes\\Services\\PdfCompressionService.cs",
-              "ToolTip": "C:\\Users\\Mardiansyah\\Documents\\GitHub\\Ringkes-Windows\\Ringkes\\Services\\PdfCompressionService.cs",
-              "RelativeToolTip": "Ringkes\\Services\\PdfCompressionService.cs",
-              "ViewState": "AgIAADsAAAAAAAAAAAAAADsAAAABAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-06-11T16:18:13.351Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 7,
-              "Title": "FileHelper.cs",
-              "DocumentMoniker": "C:\\Users\\Mardiansyah\\Documents\\GitHub\\Ringkes-Windows\\Ringkes\\Helpers\\FileHelper.cs",
-              "RelativeDocumentMoniker": "Ringkes\\Helpers\\FileHelper.cs",
-              "ToolTip": "C:\\Users\\Mardiansyah\\Documents\\GitHub\\Ringkes-Windows\\Ringkes\\Helpers\\FileHelper.cs",
-              "RelativeToolTip": "Ringkes\\Helpers\\FileHelper.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAUAAAAFAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-06-11T16:15:04.393Z"
+              "WhenOpened": "2026-06-16T16:31:57.385Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 4,
-              "Title": "AboutWindow.xaml",
-              "DocumentMoniker": "C:\\Users\\Mardiansyah\\Documents\\GitHub\\Ringkes-Windows\\Ringkes\\AboutWindow.xaml",
-              "RelativeDocumentMoniker": "Ringkes\\AboutWindow.xaml",
-              "ToolTip": "C:\\Users\\Mardiansyah\\Documents\\GitHub\\Ringkes-Windows\\Ringkes\\AboutWindow.xaml",
-              "RelativeToolTip": "Ringkes\\AboutWindow.xaml",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
-              "WhenOpened": "2026-05-23T11:14:34.803Z"
-            }
-          ]
-        }
-      ]
-    },
-    {
-      "Orientation": 0,
-      "VerticalTabListWidth": 256,
-      "FloatingWindowState": {
-        "Id": "62043141-d10b-4eae-a72b-dbb3849fb1f8",
-        "Display": 0,
-        "X": 32,
-        "Y": 80,
-        "Width": 550,
-        "Height": 1155,
-        "WindowState": 0
-      },
-      "DocumentGroups": [
-        {
-          "DockedWidth": 200,
-          "SelectedChildIndex": 0,
-          "Children": [
+              "Title": "MergeManagerWindow.xaml.cs",
+              "DocumentMoniker": "C:\\Users\\Mardiansyah\\Documents\\GitHub\\Ringkes-Windows\\Ringkes\\Windows\\MergeManagerWindow.xaml.cs",
+              "RelativeDocumentMoniker": "Ringkes\\Windows\\MergeManagerWindow.xaml.cs",
+              "ToolTip": "C:\\Users\\Mardiansyah\\Documents\\GitHub\\Ringkes-Windows\\Ringkes\\Windows\\MergeManagerWindow.xaml.cs",
+              "RelativeToolTip": "Ringkes\\Windows\\MergeManagerWindow.xaml.cs",
+              "ViewState": "AgIAAEkBAAAAAAAAAAAAAGABAAARAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-06-16T16:34:00.671Z",
+              "EditorCaption": ""
+            },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
-              "Title": "MainWindow.xaml",
-              "DocumentMoniker": "C:\\Users\\Mardiansyah\\Documents\\GitHub\\Ringkes-Windows\\Ringkes\\MainWindow.xaml",
-              "RelativeDocumentMoniker": "Ringkes\\MainWindow.xaml",
-              "ToolTip": "C:\\Users\\Mardiansyah\\Documents\\GitHub\\Ringkes-Windows\\Ringkes\\MainWindow.xaml",
-              "RelativeToolTip": "Ringkes\\MainWindow.xaml",
+              "DocumentIndex": 5,
+              "Title": "MergeManagerWindow.xaml",
+              "DocumentMoniker": "C:\\Users\\Mardiansyah\\Documents\\GitHub\\Ringkes-Windows\\Ringkes\\Windows\\MergeManagerWindow.xaml",
+              "RelativeDocumentMoniker": "Ringkes\\Windows\\MergeManagerWindow.xaml",
+              "ToolTip": "C:\\Users\\Mardiansyah\\Documents\\GitHub\\Ringkes-Windows\\Ringkes\\Windows\\MergeManagerWindow.xaml",
+              "RelativeToolTip": "Ringkes\\Windows\\MergeManagerWindow.xaml",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
-              "WhenOpened": "2026-05-25T14:22:47.09Z",
+              "WhenOpened": "2026-06-16T16:33:10.186Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "PdfMergeService.cs",
+              "DocumentMoniker": "C:\\Users\\Mardiansyah\\Documents\\GitHub\\Ringkes-Windows\\Ringkes\\Services\\PdfMergeService.cs",
+              "RelativeDocumentMoniker": "Ringkes\\Services\\PdfMergeService.cs",
+              "ToolTip": "C:\\Users\\Mardiansyah\\Documents\\GitHub\\Ringkes-Windows\\Ringkes\\Services\\PdfMergeService.cs",
+              "RelativeToolTip": "Ringkes\\Services\\PdfMergeService.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAACAAAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-06-16T15:10:25.125Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 7,
+              "Title": "PDFItem.cs",
+              "DocumentMoniker": "C:\\Users\\Mardiansyah\\Documents\\GitHub\\Ringkes-Windows\\Ringkes\\Models\\PDFItem.cs",
+              "RelativeDocumentMoniker": "Ringkes\\Models\\PDFItem.cs",
+              "ToolTip": "C:\\Users\\Mardiansyah\\Documents\\GitHub\\Ringkes-Windows\\Ringkes\\Models\\PDFItem.cs",
+              "RelativeToolTip": "Ringkes\\Models\\PDFItem.cs",
+              "ViewState": "AgIAABQAAAAAAAAAAAAAAD0AAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-06-16T14:29:35.161Z",
               "EditorCaption": ""
             }
           ]

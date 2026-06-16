@@ -300,12 +300,154 @@
 
         </ListView>
 
+        <ListView x:Name="MergeHistoryListView"
+              Grid.Row="5"
+              Visibility="Collapsed"
+              BorderThickness="0"
+              Background="Transparent"
+              HorizontalContentAlignment="Stretch"
+              ScrollViewer.HorizontalScrollBarVisibility="Disabled"
+              ScrollViewer.VerticalScrollBarVisibility="Auto">
+
+            <ListView.ItemTemplate>
+
+                <DataTemplate>
+
+                    <Border Background="White"
+                            CornerRadius="14"
+                            Padding="12"
+                            Margin="0,0,0,10">
+
+                        <StackPanel>
+
+                            <!-- HEADER -->
+                            <Grid Margin="0,0,0,6">
+
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="*" />
+                                    <ColumnDefinition Width="Auto" />
+                                </Grid.ColumnDefinitions>
+
+                                <TextBlock Grid.Column="0"
+                                           Text="{Binding FileName}"
+                                           FontWeight="SemiBold"
+                                           FontSize="13"
+                                           VerticalAlignment="Center"
+                                           TextTrimming="CharacterEllipsis"
+                                           ToolTip="{Binding OutputPath}"/>
+
+                                <StackPanel Grid.Column="1"
+                                            Orientation="Horizontal">
+
+                                    <Button Width="24"
+                                            Height="24"
+                                            Margin="4,0,0,0"
+                                            Padding="0"
+                                            Background="Transparent"
+                                            BorderThickness="0"
+                                            Cursor="Hand"
+                                            Tag="{Binding OutputPath}"
+                                            Click="OpenMergedFile_Click"
+                                            ToolTip="Open File">
+
+                                        <TextBlock FontFamily="Segoe MDL2 Assets"
+                                               FontSize="14"
+                                               Text="&#xE8A7;"/>
+
+                                    </Button>
+
+                                    <Button Width="24"
+                                            Height="24"
+                                            Margin="4,0,0,0"
+                                            Padding="0"
+                                            Background="Transparent"
+                                            BorderThickness="0"
+                                            Cursor="Hand"
+                                            Tag="{Binding OutputPath}"
+                                            Click="OpenMergedFolder_Click"
+                                            ToolTip="Open Folder">
+
+                                        <TextBlock FontFamily="Segoe MDL2 Assets"
+                                               FontSize="14"
+                                               Text="&#xED43;"/>
+
+                                    </Button>
+
+                                </StackPanel>
+
+                            </Grid>
+
+                            <!-- PATH -->
+                            <TextBlock Margin="0,4,0,0"
+                                   FontSize="11"
+                                   Foreground="#707070"
+                                   TextTrimming="CharacterEllipsis"
+                                   ToolTip="{Binding OutputPath}"
+                                   Text="{Binding FolderName,
+                                                  StringFormat=📂 {0}}"/>
+
+                            <!-- SOURCE COUNT -->
+                            <TextBlock Margin="0,4,0,0"
+                                    FontSize="11"
+                                    Foreground="#707070">
+
+                                    <Run Text="{Binding SourceCount}"/>
+                                    <Run Text=" PDF file(s) • "/>
+                                    <Run Text="{Binding CreatedAt,
+                                                StringFormat={}{0:dd MMM yyyy HH:mm}}"/>
+
+                            </TextBlock>
+
+                        </StackPanel>
+
+                    </Border>
+
+                </DataTemplate>
+
+            </ListView.ItemTemplate>
+
+        </ListView>
+
+        <Grid x:Name="MergeProgressPanel"
+              Grid.Row="5"
+              Visibility="Collapsed">
+
+            <StackPanel HorizontalAlignment="Center"
+                VerticalAlignment="Center"
+                Width="320">
+
+                <TextBlock Text="📄"
+                   FontSize="42"
+                   HorizontalAlignment="Center"/>
+
+                <TextBlock x:Name="MergeProgressTitle"
+                   Text="Merging PDF files..."
+                   FontSize="16"
+                   FontWeight="SemiBold"
+                   Margin="0,10,0,15"
+                   HorizontalAlignment="Center"/>
+
+                <ProgressBar x:Name="MergeProgressBar"
+                     Height="18"
+                     IsIndeterminate="True"/>
+
+                <TextBlock x:Name="MergeOutputText"
+                   Margin="0,12,0,0"
+                   FontSize="11"
+                   Foreground="#707070"
+                   TextAlignment="Center"
+                   TextWrapping="Wrap"/>
+
+            </StackPanel>
+
+        </Grid>
+
         <!-- FOOTER/ACTION -->
         <Border Grid.Row="6"
-        Background="White"
-        CornerRadius="12"
-        Padding="10"
-        Margin="0,8,0,0">
+            Background="White"
+            CornerRadius="12"
+            Padding="10"
+            Margin="0,8,0,0">
 
             <DockPanel LastChildFill="False">
 

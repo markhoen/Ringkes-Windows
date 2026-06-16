@@ -1,12 +1,13 @@
 ﻿using PdfSharp.Pdf;
 using PdfSharp.Pdf.IO;
+using System.Collections.Generic;
 
 namespace Ringkes.Services
 {
     public static class PdfMergeService
     {
-        public static bool Merge(
-            string[] files,
+        public static void Merge(
+            IEnumerable<string> files,
             string outputFile)
         {
             PdfDocument output =
@@ -19,15 +20,14 @@ namespace Ringkes.Services
                         file,
                         PdfDocumentOpenMode.Import);
 
-                foreach (PdfPage page in input.Pages)
+                foreach (PdfPage page
+                         in input.Pages)
                 {
                     output.AddPage(page);
                 }
             }
 
             output.Save(outputFile);
-
-            return true;
         }
     }
 }
