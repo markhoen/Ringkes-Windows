@@ -7,7 +7,7 @@ DefaultDirName={autopf}\Ringkes
 DefaultGroupName=Ringkes
 
 OutputDir=output
-OutputBaseFilename=Ringkes-Windows-V1.1.0
+OutputBaseFilename=Ringkes-Windows-V1.1.0-testing
 
 Compression=lzma
 SolidCompression=yes

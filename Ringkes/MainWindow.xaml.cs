@@ -47,11 +47,77 @@ namespace Ringkes
         public MainWindow()
         {
             InitializeComponent();
+
+            CheckGhostscript();
+
             UpdateModeUI();
             LoadLogo();
             UpdateFooter();
+
             FileListView.ItemsSource = pdfs;
             MergeHistoryListView.ItemsSource = mergeHistory;
+        }
+
+        private bool ghostscriptAvailable;
+
+        private void CheckGhostscript()
+        {
+            string gsPath =
+                Path.Combine(
+                    AppDomain.CurrentDomain.BaseDirectory,
+                    "Tools",
+                    "gswin64c.exe");
+
+            if (!File.Exists(gsPath))
+            {
+                GhostscriptStatusText.Text =
+                    "Ghostscript Not Found";
+
+                GhostscriptIndicator.Fill = 
+                    Brushes.Firebrick;
+
+                GhostscriptPathText.Text =
+                    "Compression mode unavailable";
+
+                CompressModeButton.IsEnabled = false;
+
+                ghostscriptAvailable = false;
+
+                return;
+            }
+
+            try
+            {
+                FileVersionInfo info =
+                    FileVersionInfo.GetVersionInfo(gsPath);
+
+                string version =
+                    info.FileVersion;
+
+                GhostscriptStatusText.Text =
+                    "Ghostscript Ready";
+
+                GhostscriptIndicator.Fill =
+                    Brushes.LimeGreen;
+
+                GhostscriptPathText.Text =
+                    $"Embedded Engine • v{version}";
+
+                ghostscriptAvailable = true;
+            }
+            catch
+            {
+                GhostscriptStatusText.Text =
+                    "Ghostscript Detected";
+
+                GhostscriptIndicator.Fill = 
+                    Brushes.OrangeRed;
+
+                GhostscriptPathText.Text =
+                    "Version information unavailable";
+
+                ghostscriptAvailable = true;
+            }
         }
 
         private void CompressModeButton_Click(
@@ -166,14 +232,18 @@ namespace Ringkes
                 DropSubtitleText.Text =
                     "COMPRESS PDF FILES";
 
-                FooterText.Text =
-                    "Ready";
+                GhostscriptPanel.Visibility =
+                    Visibility.Visible;
 
                 FileListView.Visibility =
                     Visibility.Visible;
 
                 ClearFinishedButton.Visibility =
                     Visibility.Visible;
+
+                ClearFinishedButton.IsEnabled =
+                    pdfs.Any(x =>
+                        x.Status.StartsWith("Finished"));
 
                 ManageFilesButton.Visibility =
                     Visibility.Collapsed;
@@ -203,6 +273,9 @@ namespace Ringkes
                 DropSubtitleText.Text =
                     "COMBINE MULTIPLE PDF FILES";
 
+                GhostscriptPanel.Visibility =
+                    Visibility.Collapsed;
+
                 FileListView.Visibility =
                     Visibility.Collapsed;
 
@@ -217,6 +290,8 @@ namespace Ringkes
 
                 RefreshMergeUI();
             }
+
+            UpdateFooter();
         }
 
         private void ManageFilesButton_Click(
@@ -345,6 +420,10 @@ namespace Ringkes
 
         private void UpdateFooter()
         {
+            ClearFinishedButton.IsEnabled =
+                pdfs.Any(x =>
+                    x.Status.StartsWith("Finished"));
+
             if (currentMode ==
                 RingkesMode.Merge)
             {

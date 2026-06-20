@@ -8,26 +8,27 @@
         Title="Ringkes"
         Height="700"
         Width="500"
-        MinHeight="500"
+        MinHeight="650"
         MinWidth="500"
         WindowStartupLocation="CenterScreen"
-        Background="#F3F3F3">
+        Background="#F8F8F8">
 
     <Grid Margin="14">
 
         <Grid.RowDefinitions>
-            <RowDefinition Height="40"/>
-            <RowDefinition Height="110"/>
-            <RowDefinition Height="Auto"/>
-            <RowDefinition Height="Auto"/>
-            <RowDefinition Height="130"/>
-            <RowDefinition Height="*"/>
-            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="40"/><!-- Menu -->
+            <RowDefinition Height="120"/><!-- Header -->
+            <RowDefinition Height="Auto"/><!-- Mode Selector -->
+            <RowDefinition Height="Auto"/><!-- Ghostscript -->
+            <RowDefinition Height="130"/><!-- Drop Area -->
+            <RowDefinition Height="*"/><!-- List -->
+            <RowDefinition Height="Auto"/><!-- Footer -->
         </Grid.RowDefinitions>
 
         <!-- TOP MENU -->
         <Menu Grid.Row="0"
               Height="28"
+              Background="#F8F8F8"
               Margin="0,0,0,10">
 
             <MenuItem Header="About">
@@ -90,81 +91,12 @@
 
                 </StackPanel>
 
-                <!-- RIGHT -->
-                <Border Background="#F8F8F8"
-                        CornerRadius="10"
-                        Padding="12,8"
-                        DockPanel.Dock="Right"
-                        Height="40">
-
-                    <CheckBox x:Name="OverwriteCheckBox"
-                              Content="Overwrite Original File(s)"
-                              FontSize="12"
-                              VerticalAlignment="Center"/>
-
-                </Border>
-
-            </DockPanel>
-
-        </Border>
-
-        <!-- STATUS BAR -->
-        <Border Grid.Row="2"
-            Background="White"
-            CornerRadius="12"
-            Padding="12"
-            Margin="0,0,0,14">
-
-            <DockPanel>
-
-                <StackPanel Orientation="Horizontal">
-
-                    <!-- GHOSTSCRIPT -->
-                    <StackPanel Orientation="Horizontal"
-                        Margin="0,0,18,0">
-
-                        <Ellipse Width="10"
-                         Height="10"
-                         Fill="LimeGreen"
-                         VerticalAlignment="Center"/>
-
-                        <TextBlock Text=" Ghostscript"
-                           FontSize="11"
-                           Foreground="#606060"
-                           VerticalAlignment="Center"/>
-                    </StackPanel>
-
-                    <!-- EMBEDDED -->
-                    <StackPanel Orientation="Horizontal">
-
-                        <Ellipse Width="10"
-                         Height="10"
-                         Fill="DodgerBlue"
-                         VerticalAlignment="Center"/>
-
-                        <TextBlock Text=" Embedded"
-                           FontSize="11"
-                           Foreground="#606060"
-                           VerticalAlignment="Center"/>
-
-                        <TextBlock Text=" gswin64c.exe"
-                           DockPanel.Dock="Right"
-                           FontSize="10"
-                           Foreground="#909090"
-                           VerticalAlignment="Center"/>
-                    </StackPanel>
-
-                </StackPanel>
-
-                <!-- PATH -->
-                
-
             </DockPanel>
 
         </Border>
 
         <!-- MODE SELECTOR -->
-        <Border Grid.Row="3"
+        <Border Grid.Row="2"
             Background="White"
             CornerRadius="12"
             Padding="6"
@@ -189,6 +121,62 @@
                     Height="32"
                     Margin="6,0,0,0"
                     Click="MergeModeButton_Click"/>
+
+            </Grid>
+
+        </Border>
+
+        <!-- STATUS BAR -->
+        <Border x:Name="GhostscriptPanel"
+                Grid.Row="3"
+                Background="White"
+                CornerRadius="12"
+                Padding="12"
+                Margin="0,0,0,14">
+
+            <Grid>
+
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*" />
+                    <ColumnDefinition Width="Auto" />
+                </Grid.ColumnDefinitions>
+
+                <!-- LEFT -->
+                <Grid Grid.Column="0">
+
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="Auto"/>
+                        <ColumnDefinition Width="*"/>
+                    </Grid.ColumnDefinitions>
+
+                    <Ellipse x:Name="GhostscriptIndicator"
+                             Width="10"
+                             Height="10"
+                             Margin="0,2,8,0"
+                             VerticalAlignment="Top"/>
+
+                    <StackPanel Grid.Column="1">
+
+                        <TextBlock x:Name="GhostscriptStatusText"
+                                   FontSize="12"
+                                   FontWeight="SemiBold"/>
+
+                        <TextBlock x:Name="GhostscriptPathText"
+                                   FontSize="11"
+                                   Foreground="#707070"
+                                   Margin="0,4,0,0"/>
+
+                    </StackPanel>
+
+                </Grid>
+
+                <!-- RIGHT -->
+                <CheckBox x:Name="OverwriteCheckBox"
+                          Grid.Column="1"
+                          Content="Overwrite Original File(s)"
+                          FontSize="12"
+                          VerticalAlignment="Center"
+                          Margin="12,0,0,0"/>
 
             </Grid>
 

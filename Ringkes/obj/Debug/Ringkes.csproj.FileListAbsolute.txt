@@ -584,3 +584,7 @@ C:\Users\Mardiansyah\Documents\GitHub\Ringkes-Windows\Ringkes\obj\Debug\Ringkes.
 C:\Users\Mardiansyah\Documents\GitHub\Ringkes-Windows\Ringkes\obj\Debug\Ringkes.exe
 C:\Users\Mardiansyah\Documents\GitHub\Ringkes-Windows\Ringkes\obj\Debug\Ringkes.pdb
 C:\Users\Mardiansyah\Documents\GitHub\Ringkes-Windows\Ringkes\obj\Debug\Ringkes.exe.config
+C:\Users\Mardiansyah\Documents\GitHub\Ringkes-Windows\Ringkes\obj\Debug\Windows\MergeManagerWindow.baml
+C:\Users\Mardiansyah\Documents\GitHub\Ringkes-Windows\Ringkes\obj\Debug\Windows\MergeProgressWindow.baml
+C:\Users\Mardiansyah\Documents\GitHub\Ringkes-Windows\Ringkes\obj\Debug\Windows\MergeManagerWindow.g.cs
+C:\Users\Mardiansyah\Documents\GitHub\Ringkes-Windows\Ringkes\obj\Debug\Windows\MergeProgressWindow.g.cs
