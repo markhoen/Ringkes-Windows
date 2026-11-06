@@ -17,7 +17,7 @@
 * **Drag and Drop:** Cukup seret dan lepas file PDF Anda ke dalam aplikasi untuk langsung memulai proses.
 * **Kualitas Terjaga:** Mengurangi ukuran file (file size) secara signifikan namun tetap mempertahankan keterbacaan teks dan dokumen.
 * **Keamanan Lokal:** Proses kompresi dilakukan sepenuhnya secara *offline* di perangkat Anda, menjaga kerahasiaan data penting Anda.
-* **Desain Minimalis:** Antarmuka yang bersih, modern, dan selaras dengan ekosistem macOS.
+* **Desain Minimalis:** Antarmuka yang bersih dan modern.
 
 ---
 
